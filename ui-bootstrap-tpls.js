@@ -3264,14 +3264,16 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
 
               var ttPosition = $position.positionElements(element, tooltip, ttScope.placement, appendToBody);
               
-              if (ttPosition.left + tooltip[0].clientWidth > window.innerWidth) {
-                angular.element( tooltip[0].querySelector('.popover.top > .arrow') ).css('left', (tooltip[0].clientWidth - ((element[0].clientWidth / 2) + 20)) + 'px');
-                ttPosition.left = window.innerWidth - tooltip[0].clientWidth;
-              }
-              
-              if (ttPosition.left < 0) {
-                angular.element( tooltip[0].querySelector('.popover.top > .arrow') ).css('left', (20 + (element[0].clientWidth / 2)) + 'px');
-                ttPosition.left = 0;
+              if (ttScope.placement == "top") {
+                if (ttPosition.left + tooltip[0].clientWidth > window.innerWidth) {
+                  angular.element( tooltip[0].querySelector('.popover.top > .arrow') ).css('left', (tooltip[0].clientWidth - ((element[0].clientWidth / 2) + 20)) + 'px');
+                  ttPosition.left = window.innerWidth - tooltip[0].clientWidth;
+                }
+                
+                if (ttPosition.left < 0) {
+                  angular.element( tooltip[0].querySelector('.popover.top > .arrow') ).css('left', (20 + (element[0].clientWidth / 2)) + 'px');
+                  ttPosition.left = 0;
+                }
               }
               
               ttPosition.top += 'px';
