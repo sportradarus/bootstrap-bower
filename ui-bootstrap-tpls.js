@@ -1066,7 +1066,7 @@ angular.module('ui.bootstrap.position', [])
 
         var shiftHeight = {
           center: function () {
-            return hostElPos.top + hostElPos.height / 2 - targetElHeight / 2;
+            return (hostElPos.top + hostElPos.height / 2) - targetElHeight / 2 + 5;
           },
           top: function () {
             return hostElPos.top;
@@ -1086,7 +1086,7 @@ angular.module('ui.bootstrap.position', [])
           case 'left':
             targetElPos = {
               top: shiftHeight[pos1](),
-              left: hostElPos.left - targetElWidth
+              left: (hostElPos.left - hostElPos.width) - targetElWidth - 30
             };
             break;
           case 'bottom':
