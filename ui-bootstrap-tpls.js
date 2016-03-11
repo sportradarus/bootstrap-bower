@@ -5338,7 +5338,7 @@ angular.module("template/datepicker/month.html", []).run(["$templateCache", func
 
 angular.module("template/datepicker/popup.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("template/datepicker/popup.html",
-    "<ul class=\"dropdown-menu\" ng-if=\"isOpen\" style=\"display: block\" ng-style=\"{top: position.top+'px', left: position.left+'px'}\" ng-keydown=\"keydown($event)\" ng-click=\"$event.stopPropagation()\">\n" +
+    "<div><ul class=\"dropdown-menu\" ng-if=\"isOpen\" style=\"display: block\" ng-style=\"{top: position.top+'px', left: position.left+'px'}\" ng-keydown=\"keydown($event)\" ng-click=\"$event.stopPropagation()\">\n" +
     "	<li ng-transclude></li>\n" +
     "	<li ng-if=\"showButtonBar\" style=\"padding:10px 9px 2px\">\n" +
     "		<span class=\"btn-group pull-left\">\n" +
@@ -5347,7 +5347,7 @@ angular.module("template/datepicker/popup.html", []).run(["$templateCache", func
     "		</span>\n" +
     "		<button type=\"button\" class=\"btn btn-sm btn-success pull-right\" ng-click=\"close()\">{{ getText('close') }}</button>\n" +
     "	</li>\n" +
-    "</ul>\n" +
+    "</ul></div>\n" +
     "");
 }]);
 
